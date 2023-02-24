@@ -14,6 +14,8 @@ RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 # Install Xfce, VNC server, and websockify
 RUN apt-get update && apt-get install -y xfce4 xfce4-goodies tightvncserver websockify
 
+ENV USER=root
+
 # Set a custom password for the VNC server
 RUN mkdir /root/.vnc && echo "7295123@yu" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
 
