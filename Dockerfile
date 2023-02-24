@@ -8,9 +8,6 @@ RUN echo 'keyboard-configuration keyboard-configuration/model select Generic 105
 RUN echo 'keyboard-configuration keyboard-configuration/options select ' | debconf-set-selections
 RUN echo 'keyboard-configuration keyboard-configuration/toggle select No toggling' | debconf-set-selections
 
-# Set the locale to Brazilian Portuguese
-RUN locale-gen pt_BR.UTF-8 && update-locale LANG=pt_BR.UTF-8
-
 # Set the timezone (optional)
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 
